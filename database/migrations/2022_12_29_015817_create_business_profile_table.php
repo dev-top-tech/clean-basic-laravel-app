@@ -18,6 +18,11 @@ return new class extends Migration
             $table->timestamps();
             $table->string("business_type")->nullable();
             $table->string("business_name")->nullable();
+            $table->string("category_1")->nullable();
+            $table->string("category_2")->nullable();
+            $table->string("category_3")->nullable();
+            $table->string("category_4")->nullable();
+            $table->string("category_5")->nullable();
             $table->string("website")->nullable();
             $table->string("address")->nullable();
             $table->string("zip")->nullable();
