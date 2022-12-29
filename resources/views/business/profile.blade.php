@@ -37,11 +37,21 @@
             </div>
     
             <div class="right-side w-50" style="padding-left: 20px;">
-                <div class="form-group">
-                    <label for="business_name">Business Name</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Business Name">
+                <div class="form-group d-flex flex-row">
+                    <div class="d-flex flex-column">
+                        <label for="business_name">Business Name</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Business Name">
+                        </div>
                     </div>
+                    
+                    <div class="d-flex flex-column ml-3">
+                        <label for="website">Website</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Website">
+                        </div>
+                    </div>
+                    
                 </div>
     
             </div>
