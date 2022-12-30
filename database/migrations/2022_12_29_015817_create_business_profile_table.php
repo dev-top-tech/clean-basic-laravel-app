@@ -32,6 +32,20 @@ return new class extends Migration
             $table->text("description")->nullable();
             $table->string("logo_path")->nullable();
             $table->string("img_path")->nullable();
+            $table->string("monday_start_time")->nullable();
+            $table->string("monday_end_time")->nullable();
+            $table->string("tuesday_start_time")->nullable();
+            $table->string("tuesday_end_time")->nullable();
+            $table->string("wednesday_start_time")->nullable();
+            $table->string("wednesday_end_time")->nullable();
+            $table->string("thursday_start_time")->nullable();
+            $table->string("thursday_end_time")->nullable();
+            $table->string("friday_start_time")->nullable();
+            $table->string("friday_end_time")->nullable();
+            $table->string("saturdat_start_time")->nullable();
+            $table->string("saturday_end_time")->nullable();
+            $table->string("sunday_start_time")->nullable();
+            $table->string("sunday_end_time")->nullable();
         });
     }
 
