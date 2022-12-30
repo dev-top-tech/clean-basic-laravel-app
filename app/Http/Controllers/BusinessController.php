@@ -14,6 +14,8 @@ class BusinessController extends Controller
 
     public function store(Request $request){
         BusinessProfile::insert(request()->except(["_token"]));
-        return view("business.profile",["status"=>"Successfully Stored"]);
+        $profiles = BusinessProfile::all();
+        return view("business.profile",["status"=>"Successfully Stored", 
+                                        "profiles"=>$profiles]);
     }
 }
