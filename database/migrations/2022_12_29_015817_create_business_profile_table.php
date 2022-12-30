@@ -42,7 +42,7 @@ return new class extends Migration
             $table->string("thursday_end_time")->nullable();
             $table->string("friday_start_time")->nullable();
             $table->string("friday_end_time")->nullable();
-            $table->string("saturdat_start_time")->nullable();
+            $table->string("saturday_start_time")->nullable();
             $table->string("saturday_end_time")->nullable();
             $table->string("sunday_start_time")->nullable();
             $table->string("sunday_end_time")->nullable();

@@ -44,7 +44,7 @@
                     <div class="d-flex flex-column">
                         <label for="business_name">Business Name</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Business Name">
+                            <input type="text" class="form-control" placeholder="Business Name" name="business_name" >
                         </div>
                     </div>
                     
@@ -59,7 +59,7 @@
                     <div class="d-flex flex-column">
                         <label for="address">Address</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="address" name="address">
+                            <input type="text" class="form-control" placeholder="Address" name="address">
                         </div>
                     </div>
                     

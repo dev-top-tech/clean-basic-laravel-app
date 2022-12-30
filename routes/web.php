@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BusinessController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Route::get('/profile', function () {
     return view('business.profile');
 })->name("business.profile");
+
+Route::post('/profile',[BusinessController::class,"store"]
+    )->name("business.profile.update");
