@@ -3,7 +3,7 @@
 @section("content")
 <div class="d-flex justify-content-center align-items-center">
     <form style="width: 80%;" method="POST">
-        @csrf
+        {{ csrf_field() }}
         <div class="form-group w-100 d-block">
             <h2>Create Profile Page</h2>
         </div>
