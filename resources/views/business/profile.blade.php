@@ -1,15 +1,15 @@
 @extends("templates.base")
 
 @section("content")
-<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh; min-width: 100vw;">
+<div class="d-flex justify-content-center align-items-center">
     <form style="width: 80%;" method="POST">
         @csrf
         <div class="form-group w-100 d-block">
             <h2>Create Profile Page</h2>
         </div>
 
-        <div class="d-flex flex-row">
-            <div class="left-side w-50">
+        <div class="d-flex justify-content-center flex-xs-column flex-md-row">
+            <div class="left-side">
                 <div class="form-group">
                     <label for="business_type">Add Business Type</label>
                   
@@ -36,10 +36,16 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary submit">Submit</button>
                         <button type="button" class="btn btn-secondary clear">Clear</button>
+                        <button type="button" class="btn btn-success clear" data-toggle="modal" data-target="#showRecords">Show Records</button>
                     </div>
+                    @if(isset($status))
+                        <div class="form-group">
+                            <p>Successfully Stored</p>
+                        </div>
+                    @endif
             </div>
     
-            <div class="right-side w-50" style="padding-left: 20px;">
+            <div class="right-side" style="padding-left: 20px;">
                 <div class="form-group d-flex flex-row w-100">
                     <div class="d-flex flex-column">
                         <label for="business_name">Business Name</label>
@@ -208,6 +214,31 @@
         </div>   
       </form>
 </div>
+
+<div class="modal" id="showRecords"  tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Business Profile Records</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          @foreach($profiles as $profile)
+            <div class="border border-primary mb-3 rounded">
+                <p><span>Business Name: </span>{{ $profile->business_name }}</p>
+                <p><span>Category: </span>{{ $profile->category_1 }}</p>
+                <p><span>Business Type: </span>{{ $profile->business_type }}</p>
+            </div>
+          @endforeach
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection
 
 @section("scripts")
@@ -222,4 +253,10 @@
             $(this).val("default");
         });  
     });
+
+
+    // Trigger modal to see records
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+      })
 @endsection

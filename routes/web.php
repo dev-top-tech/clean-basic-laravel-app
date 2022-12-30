@@ -18,9 +18,8 @@ Route::get('/', function () {
     return view('home');
 })->name("home");
 
-Route::get('/profile', function () {
-    return view('business.profile');
-})->name("business.profile");
+Route::get('/profile', [BusinessController::class,"get"])
+      ->name("business.profile.get");
 
-Route::post('/profile',[BusinessController::class,"store"]
-    )->name("business.profile.update");
+Route::post('/profile',[BusinessController::class,"store"])
+      ->name("business.profile.update");
